@@ -1,5 +1,4 @@
 #include <iostream>
-#include <dos.h>
 #include <Windows.h>
 #include <time.h>
 #include <conio.h>
@@ -69,9 +68,9 @@ void drawEnemy(int ind)
 {
     if(enemyFlag[ind] == true)
     {
-        gotoxy(enemyX[ind], enemyY[ind]); cout << "****";
+        gotoxy(enemyX[ind], enemyY[ind]); cout << "**";
         gotoxy(enemyX[ind], enemyY[ind]+1); cout << "**";
-        gotoxy(enemyX[ind], enemyY[ind]+2); cout << "****";
+        gotoxy(enemyX[ind], enemyY[ind]+2); cout << "**";
         gotoxy(enemyX[ind], enemyY[ind]+3); cout << "**";
     }
 }
@@ -80,10 +79,10 @@ void eraseEnemy(int ind)
 {
     if(enemyFlag[ind] == true)
     {
-        gotoxy(enemyX[ind], enemyY[ind]); cout << "    ";
-        gotoxy(enemyX[ind], enemyY[ind]+1); cout << "    ";
-        gotoxy(enemyX[ind], enemyY[ind]+2); cout << "    ";
-        gotoxy(enemyX[ind], enemyY[ind]+3); cout << "    ";
+        gotoxy(enemyX[ind], enemyY[ind]); cout << "  ";
+        gotoxy(enemyX[ind], enemyY[ind]+1); cout << "  ";
+        gotoxy(enemyX[ind], enemyY[ind]+2); cout << "  ";
+        gotoxy(enemyX[ind], enemyY[ind]+3); cout << "  ";
     }
 }
 
@@ -132,10 +131,7 @@ void gameover()
 {
     system("cls");
     cout << endl;
-    cout << "--------------------------" << endl;
-    cout << "------ game Over ---------" << endl;
-    cout << "--------------------------" << endl;
-    cout << "press any key to go to the main menu" << endl;
+    cout << "press any key to play agin" << endl;
     getch();
 }
 
@@ -168,14 +164,14 @@ void play()
         if(kbhit() == true)
         {
             char ch = getch();
-            if(ch == 'd' || 'D')
+            if(ch == 'a' || ch == 'A')
             {
                 if(carPos > 18) carPos -=4;
             }
 
-            else if(ch == 'a' || 'A')
+            else if(ch == 'd' || ch == 'D')
             {
-                if(carPos < 18) carPos += 4;
+                if(carPos < 50) carPos += 4;
             }
             else if(ch == 27)
             {
