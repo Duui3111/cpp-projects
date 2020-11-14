@@ -16,6 +16,6 @@ int main()
     else if (op == '*') cout << "results " << num1 * num2 << endl; 
     else if (op == '/') cout << "results " << num1 / num2 << endl; 
 
-    system("pause"); // stop the Console from Closings 
+    system("pause");
     return 0;
 } 
